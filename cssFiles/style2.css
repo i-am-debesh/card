@@ -10,7 +10,6 @@ body {
     /* color: white; */
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     height: 100%;
     
@@ -21,11 +20,12 @@ body {
     /* position: absolute; */
     flex-wrap: wrap;
     top: 20%;
-    
+    justify-content: center;
+    margin-top: 150px;
 }
 
 .card {
-    
+    margin-top: 20px;
     margin-left: 20px;
     background-color: rgba(119, 157, 114, 0.629);
     width: 300px;
