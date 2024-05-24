@@ -21,7 +21,7 @@ submitBtn.addEventListener('click', ()=>{
             responseArea.innerText = '';
     },1500)
     }else {
-       window.location.href = "index.html";
+       window.location.href = "page2.html";
     }
 });
 
