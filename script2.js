@@ -1,6 +1,10 @@
-const instaLink = document.getElementById('link-name');
+const instaLink1 = document.querySelector('.link1');
+const instaLink2 = document.querySelector('.link2');
 
-instaLink.addEventListener('click',()=>{
+instaLink1.addEventListener('click',()=>{
     window.location.href = "https://instagram.com/iamdebesh391";
+});
+instaLink2.addEventListener('click',()=>{
+    window.location.href = "https://instagram.com/darshana_mon";
 });
 
