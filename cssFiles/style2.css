@@ -10,13 +10,16 @@ body {
     /* color: white; */
     text-align: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    height: 100%;
     
 }
 
 .main {
     display: flex;
-    position: absolute;
+    /* position: absolute; */
+    flex-wrap: wrap;
     top: 20%;
     
 }
