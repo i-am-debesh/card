@@ -8,3 +8,8 @@ instaLink2.addEventListener('click',()=>{
     window.location.href = "https://instagram.com/darshana_mon";
 });
 
+let body = document.body;
+let undeMaintenance = false;
+if(undeMaintenance) {
+    body.innerHTML = '';
+}
