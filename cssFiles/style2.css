@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    
+    background-color: rgba(14, 9, 9, 0.801);
+    /* color: white; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.main {
+    display: flex;
+    position: absolute;
+    top: 20%;
+    
+}
+
+.card {
+    
+    margin-left: 20px;
+    background-color: rgba(119, 157, 114, 0.629);
+    width: 300px;
+    height: 400px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 10px;
+    /* box-shadow: 5px 5px 10px; */
+    transition: all 1s; 
+}
+.card:hover {
+    cursor: pointer;
+    margin-left: 20px;
+    background-color: rgba(65, 104, 60, 0.705);
+    width: 300px;
+    height: 400px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 10px 20px;
+    
+}
+.dp {
+    text-align: center;
+    background-color: green;
+    height: 120px;
+    width: 120px;
+    margin-left: 30%;
+    margin-top: 50px;
+    border-radius: 60px;
+    background-image: url(../images/debesh.jpg);
+    background-size: cover;
+    
+}
+.dp2 {
+    text-align: center;
+    background-color: green;
+    height: 120px;
+    width: 120px;
+    margin-left: 30%;
+    margin-top: 50px;
+    border-radius: 60px;
+    background-image: url(../images/darshana.jpg);
+    background-size: cover;
+    
+}
+.dp,
+.dp2 {
+    border: solid;
+    border-color: white;
+    border-style:inset;
+}
+
+.user {
+    margin-top: 20px;
+    font-weight: bolder;
+    font-size: 25px;
+}
+.bio {
+    /* background-color: yellow; */
+    margin-left: 32%;
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: 1000;
+    color: rgb(44, 43, 43);
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 100px;
+}
+.insta-link {
+    
+    display: flex;
+    justify-content: center;
+    /* background-color: green; */
+    height: 40px;
+    
+    margin:20px;
+    margin-top: 45px;
+}
+.insta-icon {
+    
+    /* background-color: rgba(0, 0, 0, 0); */
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    background-image: url(../icons/instagram.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: -9px;
+    
+}
+.link {
+    margin: 10px;
+}
+
+
+.link-name {
+    color: rgba(11, 11, 52, 0.664);
+    font-weight: bold;
+    transition: all, 0.5s;
+}
+.link-name:hover {
+    color: rgba(40, 40, 225, 0.664);
+    font-weight: bold;
+}
