@@ -2,13 +2,13 @@ const userNameElement = document.querySelector('.username');
 const passwordElement = document.querySelector('.password');
 const submitBtn = document.querySelector('.button');
 const responseArea = document.getElementById('response');
-let undeMaintenance = false;
+let undeMaintenance = true;
 let body = document.body;
 let goNext = false;
 
 
 if(undeMaintenance) {
-    body.innerHTML = '<h1 style="color:white; margin-top:100px">Page Removed by the Author!</h1>';
+    body.innerHTML = '<h1 style="color:white; margin-top:100px">Page Removed by the Developer!</h1>';
 }
 
 
