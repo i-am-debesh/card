@@ -6,6 +6,9 @@ let undeMaintenance = false;
 let body = document.body;
 let goNext = false;
 
+let audio = new Audio('/music/music1.mp3');
+audio.play();
+audio.loop = true;
 
 if(undeMaintenance) {
     body.innerHTML = '<h1 style="color:white; margin-top:100px">Page Removed by the Developer!</h1>';
@@ -315,6 +318,3 @@ submitBtn.addEventListener('click', ()=>{
     // }
 });
 
-let audio = new Audio('music/music1.mp3');
-audio.play();
-audio.loop = true;
