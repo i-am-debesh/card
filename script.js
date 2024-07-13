@@ -3,43 +3,54 @@ const passwordElement = document.querySelector('.password');
 const submitBtn = document.querySelector('.button');
 const responseArea = document.getElementById('response');
 let undeMaintenance = false;
+const nextButton = document.querySelector('.next-btn');
 let body = document.body;
-let goNext = false;
-
-
+let isPlaying = false;
+let bgAudio = new Audio('/music/music1.mp3');
+let pageCount = -1;
+function playBg() {
+    bgAudio.play();
+    bgAudio.loop = true;
+    isPlaying = true;
+}
+function pauseBg() {
+    bgAudio.pause();
+    isPlaying = false;
+    
+}
 
 if(undeMaintenance) {
     body.innerHTML = '<h1 style="color:white; margin-top:100px">Page Removed by the Developer!</h1>';
 }
 
 
-const htmlElement = `
-<div class="main">
-<div class="card">
+// const htmlElement = `
+// <div class="main">
+// <div class="card">
 
-    <div class="dp"></div>
-    <p class="user">Debesh Halder</p>
-    <p class="bio">Magic happens when you believe <3 </p>
-    <div class="insta-link">
-        <div class="insta-icon"></div>
-        <div class="link">
-            <p class="link-name link1" id="link-name">iamdebesh391</p>
-        </div>
-    </div>
+//     <div class="dp"></div>
+//     <p class="user">Debesh Halder</p>
+//     <p class="bio">Magic happens when you believe <3 </p>
+//     <div class="insta-link">
+//         <div class="insta-icon"></div>
+//         <div class="link">
+//             <p class="link-name link1" id="link-name">iamdebesh391</p>
+//         </div>
+//     </div>
 
     
     
         
-</div>
+// </div>
         
-</div>
+// </div>
 
 
-</div>
-`;
+// </div>
+// `;
 
 
-const page2 = `
+const page0 = `
     <div>
 
     <h1 class="heading" style="
@@ -63,7 +74,7 @@ const page2 = `
             <div class="insta-link">
                 <div class="insta-icon"></div>
                 <div class="link">
-                    <p class="link-name link1" id="link-name">kuchipuchi</p>
+                    <p class="link-name link1" id="link-name" onclick = "redirect()">kuchipuchi</p>
                 </div>
                 
             </div>
@@ -73,14 +84,14 @@ const page2 = `
         </div>
 
         <div class="btn">
-            <button class="next-btn">>></button>
+            <button class="next-btn" onclick = "goNext()">>></button>
         </div>
         
         
     </div>
     </div>
 `
-const page3 = `
+const page1 = `
     <div>
 
         <h1 class="heading" style="
@@ -107,7 +118,7 @@ const page3 = `
         </div>
 
         <div class="btn">
-            <button class="next-btn">>></button>
+            <button class="next-btn" onclick = "goNext()">>></button>
         </div>
         
         
@@ -115,7 +126,7 @@ const page3 = `
     </div>
 `
 
-const page4 = `
+const page2 = `
     <div>
 
         <h1 class="heading" style="
@@ -142,7 +153,7 @@ const page4 = `
         </div>
 
         <div class="btn">
-            <button class="next-btn">>></button>
+            <button class="next-btn" onclick = "goNext()">>></button>
         </div>
         
         
@@ -150,7 +161,7 @@ const page4 = `
     </div>
 `
 
-const page5 = `
+const page3 = `
     <div>
 
         <h1 class="heading" style="
@@ -178,7 +189,7 @@ const page5 = `
         </div>
 
         <div class="btn">
-            <button class="next-btn">>></button>
+            <button class="next-btn" onclick = "goNext()">>></button>
         </div>
         
         
@@ -186,7 +197,7 @@ const page5 = `
     </div>
 `
 
-const page6 = `
+const page4 = `
     <div>
 
         <h1 class="heading" style="
@@ -282,6 +293,8 @@ const page6 = `
     </div>
     </div>
 `
+
+let pages = [page0, page1, page2, page3, page4];
 function isCorrectInputs() {
     let username = (userNameElement.value).toLowerCase();
     let password = (passwordElement.value);
@@ -294,11 +307,10 @@ function isCorrectInputs() {
     }
 }
 submitBtn.addEventListener('click', ()=>{
-
-    body.innerHTML = page4;
-    let audio = new Audio('/music/music1.mp3');
-    audio.play();
-    audio.loop = true;
+    pageCount++;
+    body.innerHTML = pages[pageCount];
+    playBg();
+    
     // if(!correctInputs()) {  
     //     responseArea.innerText = 'incorrect password!';
 
@@ -318,4 +330,25 @@ submitBtn.addEventListener('click', ()=>{
     //     });
     // }
 });
+
+if(pageCount > 0) {
+    nextButton.addEventListener('click', ()=>{
+    console.log('clicked');
+    })
+}
+function goNext() {
+    pageCount++;
+    body.innerHTML = pages[pageCount];
+    if(pageCount === 2 || pageCount === 3) {
+        pauseBg();
+
+    }else {
+        if(isPlaying === false) {
+            playBg();
+        }
+    }
+}
+function redirect() {
+    window.location.href = "https://www.instagram.com/_mon_o_nita_/";
+}
 
