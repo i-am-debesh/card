@@ -4,7 +4,7 @@ const submitBtn = document.querySelector('.button');
 const responseArea = document.getElementById('response');
 let undeMaintenance = false;
 const nextButton = document.querySelector('.next-btn');
-let body = document.body;
+let body = document.querySelector('.main-body');
 let isPlaying = false;
 let bgAudio = new Audio('/music/music1.mp3');
 let pageCount = -1;
@@ -49,12 +49,12 @@ if(undeMaintenance) {
 // </div>
 // `;
 
-hearts();
+
 const page0 = `
     <div>
 
     <h1 class="heading" style="
-        color: rgba(242, 242, 242, 0.59);
+        color: rgba(157, 59, 105, 0.76);
         text-align: center;
         margin-top: 90px;
         margin-bottom: -100px;
@@ -96,7 +96,7 @@ const page1 = `
     <div>
 
         <h1 class="heading" style="
-            color: rgba(242, 242, 242, 0.59);
+            color: rgba(157, 59, 105, 0.76);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
@@ -132,7 +132,7 @@ const page2 = `
     <div>
 
         <h1 class="heading" style="
-            color: rgba(242, 242, 242, 0.59);
+            color: rgba(157, 59, 105, 0.76);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
@@ -168,7 +168,7 @@ const page3 = `
     <div>
 
         <h1 class="heading" style="
-            color: rgba(242, 242, 242, 0.59);
+            color: rgba(157, 59, 105, 0.76);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
@@ -205,7 +205,7 @@ const page4 = `
     <div>
 
         <h1 class="heading" style="
-            color: rgba(242, 242, 242, 0.59);
+            color: rgba(157, 59, 105, 0.76);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
@@ -302,7 +302,7 @@ const page5 = `
      <div>
 
         <h1 class="heading" style="
-            color: rgba(242, 242, 242, 0.59);
+            color: rgba(157, 59, 105, 0.76);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
@@ -362,9 +362,10 @@ submitBtn.addEventListener('click', ()=>{
         pageCount++;
         body.innerHTML = pages[pageCount];
         playBg();
+        setAnim(pageCount);
     }
 });
-
+setAnim(pageCount);
 if(pageCount > 0) {
     nextButton.addEventListener('click', ()=>{
     console.log('clicked');
@@ -373,7 +374,7 @@ if(pageCount > 0) {
 function goNext() {
     pageCount++;
     body.innerHTML = pages[pageCount];
-    
+    setAnim(pageCount)
     if(pageCount === 2 || pageCount === 3 || pageCount === 5) {
         pauseBg();
         if(pageCount === 5) {
@@ -393,6 +394,49 @@ function redirect() {
     window.location.href = "https://www.instagram.com/_mon_o_nita_/";
 }
 
+
+//Animations:::
+function congrats() {
+    const count = 200,
+  defaults = {
+    origin: { y: 0.7 },
+  };
+
+function fire(particleRatio, opts) {
+  confetti(
+    Object.assign({}, defaults, opts, {
+      particleCount: Math.floor(count * particleRatio),
+    })
+  );
+}
+
+fire(0.25, {
+  spread: 26,
+  startVelocity: 55,
+});
+
+fire(0.2, {
+  spread: 60,
+});
+
+fire(0.35, {
+  spread: 100,
+  decay: 0.91,
+  scalar: 0.8,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 25,
+  decay: 0.92,
+  scalar: 1.2,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 45,
+});
+}
 function hearts() {
     const defaults = {
         spread: 360,
@@ -421,4 +465,105 @@ function hearts() {
         particleCount: 10,
         scalar: 4,
       });
+}
+function snow(color_hex = "#B3237C") {
+    const duration = 15 * 1000,
+    animationEnd = Date.now() + duration;
+
+    let skew = 1;
+
+    function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+    }
+
+    (function frame() {
+    const timeLeft = animationEnd - Date.now(),
+        ticks = Math.max(200, 500 * (timeLeft / duration));
+
+    skew = Math.max(0.8, skew - 0.001);
+
+    confetti({
+        particleCount: 1,
+        startVelocity: 0,
+        ticks: ticks,
+        origin: {
+        x: Math.random(),
+        // since particles fall down, skew start toward the top
+        y: Math.random() * skew - 0.2,
+        },
+        colors: [color_hex],
+        shapes: ["circle"],
+        gravity: randomInRange(0.4, 0.6),
+        scalar: randomInRange(0.4, 1),
+        drift: randomInRange(-0.4, 0.4),
+    });
+
+    if (timeLeft > 0) {
+        requestAnimationFrame(frame);
+    }
+    })();
+}
+
+
+function setAnim(count) {
+    if(count === -1) {
+        hearts();
+    }else if(count === 0) {
+        congrats();
+        snow();
+        setTimeout(()=>{
+            snow();
+            
+        }, 3000)
+    }else if(count === 1) {
+        snow();
+    }else if(count === 2) {
+        congrats();
+        snow();
+        hearts();
+        setTimeout(()=>{
+
+            setTimeout(()=>{
+                snow();
+                hearts();
+            }, 10000)
+            snow();
+            hearts();
+        }, 10000)
+    }else if(count === 3) {
+        hearts();
+        snow();
+        setTimeout(()=>{
+            snow();
+            hearts();
+        }, 10000)
+    }else if(count === 4) {
+        hearts();
+        snow();
+        setTimeout(()=>{
+            setTimeout(()=>{
+                setTimeout(()=>{
+                    snow();
+                    hearts();
+                }, 5000)
+                snow();
+                hearts();
+            }, 10000);
+
+            snow();
+            hearts();
+        }, 10000);
+    }
+    else if(count === 5) {
+        hearts();
+        snow();
+        setTimeout(()=>{
+            setTimeout(()=>{
+                snow();
+                
+            }, 5000)
+            snow();
+            
+        }, 5000)
+    }
 }
