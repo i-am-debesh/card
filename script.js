@@ -49,7 +49,7 @@ if(undeMaintenance) {
 // </div>
 // `;
 
-
+hearts();
 const page0 = `
     <div>
 
@@ -102,7 +102,7 @@ const page1 = `
             font-size: 40px;
             
             
-            ">Happy Birthday Kuchipuchi</h1>
+            ">Happy Birthday Kuchipuchi ❤️</h1>
     
     <div class="main">
         <div class="card">
@@ -137,7 +137,7 @@ const page2 = `
             font-size: 40px;
             
             
-            ">Happy Birthday Kuchipuchi</h1>
+            ">Happy Birthday Kuchipuchi ❤️</h1>
     
     <div class="main">
         <div class="card">
@@ -172,7 +172,7 @@ const page3 = `
             font-size: 40px;
             
             
-            ">Happy Birthday Kuchipuchi</h1>
+            ">Happy Birthday Kuchipuchi ❤️</h1>
     
     
     <div class="main">
@@ -208,7 +208,7 @@ const page4 = `
             font-size: 40px;
             
             
-            ">Happy Birthday Kuchipuchi</h1>
+            ">Happy Birthday Kuchipuchi ❤️</h1>
     
     
     <div class="main">
@@ -285,6 +285,43 @@ const page4 = `
                 
         </div>
 
+        <div class="btn">
+            <button class="next-btn" onclick = "goNext()">>></button>
+        </div>
+        
+        
+    </div>
+    </div>
+`
+const page5 = `
+     <div>
+
+        <h1 class="heading" style="
+            color: rgb(242, 255, 3);
+            text-align: center;
+            margin-top: 90px;
+            margin-bottom: -100px;
+            font-size: 40px;
+            
+            
+            ">Happy Birthday Kuchipuchi ❤️</h1>
+    
+    
+    <div class="main">
+        <div class="card">
+            
+            
+            <div class="frame">
+
+            </div>   
+            <div class="anim">
+                <img class="anim-img" src="/images/Nt6v.gif
+                " alt="">
+            </div>  
+                
+                
+        </div>
+
         <!-- <div class="btn">
             <button class="next-btn">>></button>
         </div> -->
@@ -294,41 +331,32 @@ const page4 = `
     </div>
 `
 
-let pages = [page0, page1, page2, page3, page4];
+let pages = [page0, page1, page2, page3, page4, page5];
 function isCorrectInputs() {
     let username = (userNameElement.value).toLowerCase();
     let password = (passwordElement.value);
     
     if(username === "pompom" && password === "69") {
-        goNext = true;
+        
         return true;
     }else {
         return false;
     }
 }
 submitBtn.addEventListener('click', ()=>{
-    pageCount++;
-    body.innerHTML = pages[pageCount];
-    playBg();
     
-    // if(!correctInputs()) {  
-    //     responseArea.innerText = 'incorrect password!';
+    
+    if(!isCorrectInputs()) {  
+        responseArea.innerText = 'incorrect user or password!';
 
-    //     setTimeout(()=>{
-    //         responseArea.innerText = '';
-    // },1500)
-    // }else {
-       
-    //    const instaLink1 = document.querySelector('.link1');
-    //     const instaLink2 = document.querySelector('.link2');
-
-    //     instaLink1.addEventListener('click',()=>{
-    //         window.location.href = "https://instagram.com/iamdebesh391";
-    //     });
-    //     instaLink2.addEventListener('click',()=>{
-    //         window.location.href = "https://instagram.com/darshana_mon";
-    //     });
-    // }
+        setTimeout(()=>{
+            responseArea.innerText = '';
+    },1500)
+    }else {
+        pageCount++;
+        body.innerHTML = pages[pageCount];
+        playBg();
+    }
 });
 
 if(pageCount > 0) {
@@ -339,8 +367,15 @@ if(pageCount > 0) {
 function goNext() {
     pageCount++;
     body.innerHTML = pages[pageCount];
-    if(pageCount === 2 || pageCount === 3) {
+    
+    if(pageCount === 2 || pageCount === 3 || pageCount === 5) {
         pauseBg();
+        if(pageCount === 5) {
+            let song = new Audio('/music/music2.mp3');
+            song.play();
+            song.loop = true;
+
+        }
 
     }else {
         if(isPlaying === false) {
@@ -352,3 +387,32 @@ function redirect() {
     window.location.href = "https://www.instagram.com/_mon_o_nita_/";
 }
 
+function hearts() {
+    const defaults = {
+        spread: 360,
+        ticks: 100,
+        gravity: 0,
+        decay: 0.94,
+        startVelocity: 30,
+        shapes: ["heart"],
+        colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
+      };
+      
+      confetti({
+        ...defaults,
+        particleCount: 50,
+        scalar: 2,
+      });
+      
+      confetti({
+        ...defaults,
+        particleCount: 25,
+        scalar: 3,
+      });
+      
+      confetti({
+        ...defaults,
+        particleCount: 10,
+        scalar: 4,
+      });
+}

@@ -36,7 +36,7 @@ body {
     /* box-shadow: 5px 5px 10px; */
     transition: all 1s; 
 }
-.card:hover {
+.card {
     cursor: pointer;
     margin-left: 20px;
     background-color: rgba(65, 104, 60, 0.705);
@@ -168,3 +168,24 @@ body {
     background-color: rgb(144, 122, 72);
 }
 
+.frame {
+    background-color: black;
+    height: 70%;
+    width: 80%;
+    margin-left: 29px;
+    margin-top: 29px;
+    background-image: url(/images/mono2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: -34px;
+    background-repeat: no-repeat;
+}
+.anim-img {
+    height: 60px;
+    width: 150px;
+    filter: invert();
+    margin-top: 10px;
+    mix-blend-mode: multiply;
+    
+}
