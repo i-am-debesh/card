@@ -18,14 +18,14 @@ body {
     text-align: center;
     height: 550px;
     width: 300px;
-    margin-top: 50px;
+    margin-top: 90px;
     /* background-color: rgb(55, 88, 102); */
     background-image: url(../images/mono1.jpg);
     
     background-size: cover;
     background-repeat:no-repeat;
-    filter: blur(2px);
-    filter:opacity(0.8);
+    
+    
     border: none;    
     border-radius: 10px;
     box-shadow: 5px 5px 50px 5px;
@@ -54,7 +54,7 @@ body {
     
 }
 ::placeholder {
-    color: black;
+    color: rgba(0, 0, 0, 0.589);
 }
 .button {
     text-align: center;

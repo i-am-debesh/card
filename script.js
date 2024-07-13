@@ -3,7 +3,6 @@ const passwordElement = document.querySelector('.password');
 const submitBtn = document.querySelector('.button');
 const responseArea = document.getElementById('response');
 let undeMaintenance = false;
-const nextButton = document.querySelector('.next-btn');
 let body = document.querySelector('.main-body');
 let isPlaying = false;
 let bgAudio = new Audio('/music/music1.mp3');
@@ -366,11 +365,6 @@ submitBtn.addEventListener('click', ()=>{
     }
 });
 setAnim(pageCount);
-if(pageCount > 0) {
-    nextButton.addEventListener('click', ()=>{
-    console.log('clicked');
-    })
-}
 function goNext() {
     pageCount++;
     body.innerHTML = pages[pageCount];
