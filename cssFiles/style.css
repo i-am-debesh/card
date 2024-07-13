@@ -5,9 +5,12 @@
 
 }
 body {
-    display: flex;
+    /* display: flex; */
     justify-content: center;  
     background-color: rgb(54, 54, 57);  
+}
+.heading {
+    color: white;
 }
 .log-box {
     display: flex;
@@ -17,8 +20,8 @@ body {
     width: 300px;
     margin-top: 50px;
     /* background-color: rgb(55, 88, 102); */
-    background-image: url(../images/background.jpg);
-    background-position: -112px;
+    background-image: url(../images/mono1.jpg);
+    
     background-size: cover;
     background-repeat:no-repeat;
     filter: blur(2px);
@@ -30,13 +33,14 @@ body {
 
 }
 .items {
-    margin-top: 50%;
+    margin-top: 90%;
     text-align: center;
     width: 200px;
     height: 200px;
     background-color: rgba(0, 0, 0, 0);
     
 }
+
 .username,
 .password {
     color: rgb(0, 0, 0);
