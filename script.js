@@ -54,11 +54,12 @@ const page0 = `
     <div>
 
     <h1 class="heading" style="
-        color: rgb(242, 255, 3);
+        color: rgba(242, 242, 242, 0.59);
         text-align: center;
         margin-top: 90px;
         margin-bottom: -100px;
         font-size: 40px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         
         
         ">Happy Birthday Kuchipuchi ❤️</h1>
@@ -95,11 +96,12 @@ const page1 = `
     <div>
 
         <h1 class="heading" style="
-            color: rgb(242, 255, 3);
+            color: rgba(242, 242, 242, 0.59);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
             font-size: 40px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             
             
             ">Happy Birthday Kuchipuchi ❤️</h1>
@@ -130,11 +132,12 @@ const page2 = `
     <div>
 
         <h1 class="heading" style="
-            color: rgb(242, 255, 3);
+            color: rgba(242, 242, 242, 0.59);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
             font-size: 40px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             
             
             ">Happy Birthday Kuchipuchi ❤️</h1>
@@ -165,11 +168,12 @@ const page3 = `
     <div>
 
         <h1 class="heading" style="
-            color: rgb(242, 255, 3);
+            color: rgba(242, 242, 242, 0.59);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
             font-size: 40px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             
             
             ">Happy Birthday Kuchipuchi ❤️</h1>
@@ -201,11 +205,12 @@ const page4 = `
     <div>
 
         <h1 class="heading" style="
-            color: rgb(242, 255, 3);
+            color: rgba(242, 242, 242, 0.59);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
             font-size: 40px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             
             
             ">Happy Birthday Kuchipuchi ❤️</h1>
@@ -297,11 +302,12 @@ const page5 = `
      <div>
 
         <h1 class="heading" style="
-            color: rgb(242, 255, 3);
+            color: rgba(242, 242, 242, 0.59);
             text-align: center;
             margin-top: 90px;
             margin-bottom: -100px;
             font-size: 40px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             
             
             ">Happy Birthday Kuchipuchi ❤️</h1>

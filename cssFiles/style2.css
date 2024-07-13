@@ -6,7 +6,8 @@
 
 body {
     
-    background-color: rgba(14, 9, 9, 0.801);
+    /* background-color: rgba(14, 9, 9, 0.801); */
+    background-color: rgb(166, 148, 171);
     /* color: white; */
     text-align: center;
     display: flex;
@@ -27,7 +28,7 @@ body {
 .card {
     margin-top: 20px;
     margin-left: 20px;
-    background-color: rgba(119, 157, 114, 0.629);
+    /* background-color: rgba(119, 157, 114, 0.629); */
     width: 300px;
     height: 400px;
     margin-bottom: 30px;
@@ -39,7 +40,7 @@ body {
 .card {
     cursor: pointer;
     margin-left: 20px;
-    background-color: rgba(65, 104, 60, 0.705);
+    background-color: rgba(60, 82, 104, 0.744);
     width: 300px;
     height: 400px;
     margin-bottom: 30px;
@@ -132,9 +133,10 @@ body {
     padding: 10px 20px;
     margin-top: 200px;
     margin-left: 15px;
-    background-color: rgba(198, 255, 173, 0.552);
+    background-color: rgba(61, 83, 150, 0.844);
     border: none;
     border-radius: 20px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
     transition: all, 0.5s;
     
 
@@ -144,9 +146,10 @@ body {
 .next-btn:hover {
     color: rgba(40, 40, 225, 0.664);
     font-weight: bold;
+
 }
 .next-btn:active {
-    background-color: rgba(255, 255, 255, 0.947);
+    background-color: rgba(255, 255, 255, 0.558);
 }
 
 .end-msg {
@@ -174,11 +177,11 @@ body {
     width: 80%;
     margin-left: 29px;
     margin-top: 29px;
-    background-image: url(/images/mono2.jpg);
+    background-image: url(/images/dp.jpg);
     background-position: center;
     background-size: cover;
     background-position-x: center;
-    background-position-y: -34px;
+    /* background-position-y: 3px; */
     background-repeat: no-repeat;
 }
 .anim-img {
