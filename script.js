@@ -228,16 +228,14 @@ const page4 = `
                 <br>
                 onek boro ho
                 <br>
-                sob ichhe puron hok
+                tor sob ichhe puron hok,
                 <br>
                 evabei amar sthe jhogra kore ja
                 </b>
                 <br>
-                (btw.. eta ami tor jnno banachhi
+                (btw.. eta ami banachhi 13th july.                               
                 <br>
-                aj 13th july
-                <br>
-                14th mane kal chole jabo kolkata
+                and 14th mane kal chole jabo kolkata
                 <br>
                 okhane laptop niye jbona ty banano hbena.
                 <br>
@@ -280,6 +278,22 @@ const page4 = `
                 Nijer kheyal rakh. 
                 <br>
                 Ami ettu jalai tke but onk bhalobashi..❤️
+                <br>
+                Happy Birthday once again
+                <br>
+                kuchipuchi
+                <br>
+                pompom
+                <br>
+                mithai
+                <br>
+                rajrani
+                <br>
+                jono gono mono
+                <br>
+                maya mono biharini
+                <br>
+                singho ❤️
                 <br>
                 (:
                 </b>
