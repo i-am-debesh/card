@@ -83,8 +83,13 @@ const page0 = `
                 
         </div>
 
-        <div class="btn">
-            <button class="next-btn" onclick = "goNext()">>></button>
+        <div class="btns">
+            <div class="btn">
+            <button class="prev-btn" style="opacity: 0;"><<</button>
+            </div>
+            <div class="btn">
+                <button class="next-btn" onclick = "goNext()">>></button>
+            </div>
         </div>
         
         
@@ -118,8 +123,13 @@ const page1 = `
                 
         </div>
 
-        <div class="btn">
-            <button class="next-btn" onclick = "goNext()">>></button>
+        <div class="btns">
+            <div class="btn">
+            <button class="prev-btn " onclick = "goPrevious()"><<</button>
+            </div>
+            <div class="btn">
+                <button class="next-btn" onclick = "goNext()">>></button>
+            </div>
         </div>
         
         
@@ -154,8 +164,13 @@ const page2 = `
                 
         </div>
 
-        <div class="btn">
-            <button class="next-btn" onclick = "goNext()">>></button>
+        <div class="btns">
+            <div class="btn">
+            <button class="prev-btn " onclick = "goPrevious()"><<</button>
+            </div>
+            <div class="btn">
+                <button class="next-btn" onclick = "goNext()">>></button>
+            </div>
         </div>
         
         
@@ -191,8 +206,13 @@ const page3 = `
                 
         </div>
 
-        <div class="btn">
-            <button class="next-btn" onclick = "goNext()">>></button>
+        <div class="btns">
+            <div class="btn">
+            <button class="prev-btn " onclick = "goPrevious()"><<</button>
+            </div>
+            <div class="btn">
+                <button class="next-btn" onclick = "goNext()">>></button>
+            </div>
         </div>
         
         
@@ -303,8 +323,13 @@ const page4 = `
                 
         </div>
 
-        <div class="btn">
-            <button class="next-btn" onclick = "goNext()">>></button>
+        <div class="btns">
+            <div class="btn">
+            <button class="prev-btn " onclick = "goPrevious()"><<</button>
+            </div>
+            <div class="btn">
+                <button class="next-btn" onclick = "goNext()">>></button>
+            </div>
         </div>
         
         
@@ -341,9 +366,12 @@ const page5 = `
                 
         </div>
 
-        <!-- <div class="btn">
-            <button class="next-btn">>></button>
-        </div> -->
+        <div class="btns">
+            <div class="btn">
+            <button class="prev-btn " onclick = "goPrevious()"><<</button>
+            </div>
+            
+        </div>
         
         
     </div>
@@ -379,24 +407,54 @@ submitBtn.addEventListener('click', ()=>{
     }
 });
 setAnim(pageCount);
+let songPlaying = false;
+let song = new Audio('/music/music2.mp3');
+
+function handleSong(count) {
+    if(songPlaying === false) {
+        if(count === 5) {
+            song.play();
+            song.loop = true;
+            songPlaying = true;
+        }
+    }else if(count !== 5) {
+        if(songPlaying === true) {
+            song.pause();
+            song.currentTime = 0;
+            songPlaying = false;
+        }
+    }
+}
+
 function goNext() {
     pageCount++;
     body.innerHTML = pages[pageCount];
-    setAnim(pageCount)
+    setAnim(pageCount);
+    handleSong(pageCount);
     if(pageCount === 2 || pageCount === 3 || pageCount === 5) {
         pauseBg();
-        if(pageCount === 5) {
-            let song = new Audio('/music/music2.mp3');
-            song.play();
-            song.loop = true;
-
-        }
 
     }else {
         if(isPlaying === false) {
             playBg();
         }
     }
+}
+function goPrevious() {
+
+    pageCount--;
+    body.innerHTML = pages[pageCount];
+    setAnim(pageCount);
+    handleSong(pageCount);
+    if(pageCount === 2 || pageCount === 3 || pageCount === 5) {
+        pauseBg();
+        
+    }else {
+        if(isPlaying === false) {
+            playBg();
+        }
+    }
+
 }
 function redirect() {
     window.location.href = "https://www.instagram.com/_mon_o_nita_/";

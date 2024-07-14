@@ -142,13 +142,47 @@ body {
 
     
 }
+.prev-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    padding: 10px 20px;
+    margin-top: 200px;
+    margin-left: 15px;
+    background-color: rgba(61, 83, 150, 0.844);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    transition: all, 0.5s;
+    
 
+    
+}
+.btns {
+    /* background-color: black; */
+    display: flex;
+    margin-top: 30px;
+}
+.prev-btn{
+    margin-top: 130px;
+    
+}
+.next-btn{
+    margin-left: -55px;
+}
 .next-btn:hover {
     color: rgba(40, 40, 225, 0.664);
     font-weight: bold;
 
 }
 .next-btn:active {
+    background-color: rgba(255, 255, 255, 0.558);
+}
+.prev-btn:hover {
+    color: rgba(40, 40, 225, 0.664);
+    font-weight: bold;
+
+}
+.prev-btn:active {
     background-color: rgba(255, 255, 255, 0.558);
 }
 
