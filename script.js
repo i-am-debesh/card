@@ -379,11 +379,19 @@ const page5 = `
 `
 
 let pages = [page0, page1, page2, page3, page4, page5];
+
+function decimalToBinary(decimal) {
+    if (isNaN(decimal) || decimal < 0) {
+        return "Please enter a valid non-negative number.";
+    }
+    return Number(decimal).toString(2);
+}
+
 function isCorrectInputs() {
     let username = (userNameElement.value).toLowerCase();
     let password = (passwordElement.value);
     
-    if(username === "pompom" && password === "69") {
+    if(username === "pompom" && decimalToBinary(password) === '1000101') {
         
         return true;
     }else {
